@@ -185,14 +185,19 @@ let stwoData = [
     }
   ]
 
-  function render_stwoData(data){
-   stwoData.innerHTML = data.map(stwoData => `
-    <div class="card">
-    <img src="" alt="">
-    <h1></h1>
-    <p></p>
-    <a href=""></a>
-    <p></p>
-</div>
-    `)
-  }
+ function render_stwoData(data) {
+    section_two.innerHTML = data.map(el => `
+        <div class="card" id="${el.id}">
+            ${el.status ? `<span class="badge">${el.status}</span>` : ''}
+            <img src="${el.img}" alt="${el.name}">
+            <h1>${el.name}</h1>
+            <p>${el.description}</p>
+            <div class="card-footer">
+                <button class="btn-select">Выбрать</button>
+                <span>${el.price} ₽</span>
+            </div>
+        </div>
+    `).join(''); 
+}
+
+render_stwoData(stwoData);
