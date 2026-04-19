@@ -1,332 +1,59 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: sans-serif; background: #f4f4f4; padding-bottom: 50px; }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    /* line-height: 1.6; */
-}
+header { background: #ff4757; color: white; text-align: center; padding: 20px; position: sticky; top: 0; z-index: 1000; }
 
-/* Header */
-header {
-    background: linear-gradient(135deg, #ff4757, #ff6b6b);
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+.section-title { padding: 20px 20px 0; font-size: 24px; }
 
-header h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
-}
-
-#total {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 8px;
-}
-
-/* Search */
-.search-container {
-    padding: 15px 20px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-#searchInput {
-    width: 100%;
-    padding: 14px 18px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s;
-}
-
-#searchInput:focus {
-    border-color: #ff4757;
-    box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.2);
-}
-
-/* Categories */
-.category-container {
-    display: flex;
-    gap: 12px;
-    padding: 15px 20px;
-    overflow-x: auto;
-    background: white;
-    scrollbar-width: none;
-}
-
-.category-container::-webkit-scrollbar {
-    display: none;
-}
-
-.category-card {
-    min-width: 80px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.category-card:hover {
-    transform: scale(1.08);
-}
-
-.category-card img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.category-card h4 {
-    font-size: 13px;
-    font-weight: 600;
-    color: #333;
-}
-
-/* Products */
-.products-container {
-    padding: 15px 20px 80px;
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 18px;
-}
-
-.product-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s;
-    position: relative;
-}
-
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.product-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
-
-/* Badge */
-.badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: #ff4757;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 4px 10px;
-    border-radius: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Product Info */
-.info {
-    padding: 14px;
-    text-align: center;
-}
-
-.info h3 {
-    font-size: 15px;
-    margin-bottom: 6px;
-    min-height: 44px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff4757;
-    margin-bottom: 12px;
-}
-
-/* Counter */
-.counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.counter-btn {
-    width: 32px;
-    height: 32px;
-    border: none;
-    background: #f1f1f1;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.counter-btn:hover {
-    background: #ff4757;
-    color: white;
-}
-
-.count {
-    font-size: 18px;
-    font-weight: 600;
-    min-width: 30px;
-    text-align: center;
-}
-
-/* Add Button */
-.add-btn {
-    width: 100%;
-    padding: 12px;
-    background: #ff4757;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.add-btn:hover {
-    background: #ff3742;
-    transform: scale(1.03);
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-    .products-container {
-        grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-        gap: 15px;
-    }
-    
-    header h1 {
-        font-size: 24px;
-    }
-}
-
-
-
-
-/* Asosiy konteyner - kartochkalarni 4 qatordan joylashtiradi */
-#section_two {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 ta ustun */
-    gap: 20px; /* Kartochkalar orasidagi masofa */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     padding: 20px;
-    font-family: 'Arial', sans-serif;
 }
 
-/* Har bir mahsulot kartochkasi */
 .card {
-    background: #fff;
-    border-radius: 12px;
+    background: white;
+    border-radius: 15px;
     padding: 15px;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Sichqoncha kelganda biroz ko'tariladi */
-}
+.product-img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
 
-/* Mahsulot rasmi */
-.card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Status (NEW/XIT) belgilari */
 .badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #e74c3c; /* Qizil rang */
-    color: white;
-    padding: 4px 10px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: uppercase;
+    top: 10px; left: 10px;
+    background: red; color: white;
+    padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: bold;
 }
 
-/* Mahsulot nomi */
-.card h1 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
+.card h1 { font-size: 18px; margin-bottom: 8px; }
+.card p { font-size: 13px; color: #666; margin-bottom: 15px; flex-grow: 1; }
+
+.counter-container {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 15px;
+    background: #f9f9f9; padding: 8px; border-radius: 8px;
 }
 
-/* Mahsulot tavsifi */
-.card p {
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
-    flex-grow: 1; /* Tavsif balandligini to'ldiradi */
-    margin-bottom: 15px;
-}
+.counter { display: flex; align-items: center; gap: 10px; }
 
-/* Pastki qism: Tugma va Narx */
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.btn-count {
+    width: 25px; height: 25px; border-radius: 50%;
+    border: 1px solid #ddd; cursor: pointer; background: white;
 }
 
 .btn-select {
-    background: #ff7a00; /* To'q sariq rang */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
+    background: #ff7a00; color: white; border: none;
+    padding: 12px; border-radius: 10px; cursor: pointer; font-weight: bold;
 }
 
-.btn-select:hover {
-    background: #e66e00;
-}
+.price-text { font-weight: bold; font-size: 16px; }
 
-.price-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Mobil qurilmalar uchun moslashtirish */
-@media (max-width: 1024px) {
-    #section_two {
-        grid-template-columns: repeat(2, 1fr); /* Planshetda 2 ta ustun */
-    }
-}
-
-@media (max-width: 600px) {
-    #section_two {
-        grid-template-columns: 1fr; /* Telefonda 1 ta ustun */
-    }
-}
+/* Responsive */
+@media (max-width: 1000px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid-container { grid-template-columns: 1fr; } }
