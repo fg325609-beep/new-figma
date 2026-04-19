@@ -117,7 +117,7 @@ let stwoData = [
       "description": "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
       "price": 475,
       "currency": "₽",
-      "img": "./img/philadelphia-crunch.png",
+      "img": "./img/section_two_img.png",
       "status": "NEW"
     },
     {
@@ -126,7 +126,7 @@ let stwoData = [
       "description": "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
       "price": 395,
       "currency": "₽",
-      "img": "./img/philadelphia-creme.png",
+      "img": "./img/section_two_img_2.png",
       "status": "XIT"
     },
     {
@@ -135,7 +135,7 @@ let stwoData = [
       "description": "Действительно много семги, сливочный сыр, огурец, рис, н...",
       "price": 425,
       "currency": "₽",
-      "img": "./img/super-philadelphia.png",
+      "img": "./img/section_two_img.png",
       "status": ""
     },
     {
@@ -144,7 +144,7 @@ let stwoData = [
       "description": "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
       "price": 525,
       "currency": "₽",
-      "img": "./img/tiger-mama.png",
+      "img": "./img/section_two_img_2.png",
       "status": ""
     },
     {
@@ -153,7 +153,7 @@ let stwoData = [
       "description": "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
       "price": 525,
       "currency": "₽",
-      "img": "./img/tiger-mama-2.png",
+      "img": "./img/section_two_img_2.png",
       "status": ""
     },
     {
@@ -162,7 +162,7 @@ let stwoData = [
       "description": "Действительно много семги, сливочный сыр, огурец, рис, н...",
       "price": 425,
       "currency": "₽",
-      "img": "./img/super-philadelphia-2.png",
+      "img": "./img/section_two_img.png",
       "status": ""
     },
     {
@@ -171,7 +171,7 @@ let stwoData = [
       "description": "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
       "price": 475,
       "currency": "₽",
-      "img": "./img/philadelphia-crunch-2.png",
+      "img": "./img/img/section_two_img_2.png",
       "status": ""
     },
     {
@@ -180,7 +180,7 @@ let stwoData = [
       "description": "Сливочный сыр, семга татаки с trostnikovыm saxarom, соус у...",
       "price": 395,
       "currency": "₽",
-      "img": "./img/philadelphia-creme-2.png",
+      "img": "./img/section_two_img.png",
       "status": ""
     }
   ]
