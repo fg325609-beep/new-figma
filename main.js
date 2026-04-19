@@ -185,4 +185,14 @@ let stwoData = [
     }
   ]
 
-  
+  function render_stwoData(data){
+   stwoData.innerHTML = data.map(stwoData => `
+    <div class="card">
+    <img src="" alt="">
+    <h1></h1>
+    <p></p>
+    <a href=""></a>
+    <p></p>
+</div>
+    `)
+  }
