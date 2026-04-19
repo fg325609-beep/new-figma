@@ -244,3 +244,82 @@ window.addToCart = function(id) {
 }
 
 render_stwoData(stwoData);
+
+
+
+
+let section_theare = document.getElementById("section_theare");
+let section_theareDATA = [
+  {
+    "id": 9,
+    "name": "Картофель фри",
+    "description": "Золотистая, хрустящая картошечка фри. Подается с соусом на ваш выбор.",
+    "price": 475,
+    "img": "./img/fries.png",
+    "status": "NEW",
+    "count": 0
+  },
+  {
+    "id": 10,
+    "name": "Куриные крылышки",
+    "description": "Аппетитные крылышки гриль с пикантным соусом и специями.",
+    "price": 395,
+    "img": "./img/wings.png",
+    "status": "XIT",
+    "count": 0
+  },
+  {
+    "id": 11,
+    "name": "Наггетсы куриные",
+    "description": "Нежное куриное филе в хрустящей панировке. Идеальный перекус.",
+    "price": 425,
+    "img": "./img/nuggets.png",
+    "status": "",
+    "count": 0
+  },
+  {
+    "id": 12,
+    "name": "Классический ролл",
+    "description": "Сытный ролл в лаваше с курицей, овощами и фирменным соусом.",
+    "price": 525,
+    "img": "./img/wrap.png",
+    "status": "",
+    "count": 0
+  },
+  {
+    "id": 13,
+    "name": "Ролл в фольге",
+    "description": "Тигровая креветка, огурец, авокадо, соус Айоли, рис, икра.",
+    "price": 525,
+    "img": "./img/wrap-foil.png",
+    "status": "",
+    "count": 0
+  },
+  {
+    "id": 14,
+    "name": "Наггетсы порция",
+    "description": "Действительно много семги, сливочный сыр, огурец, рис, н...",
+    "price": 425,
+    "img": "./img/nuggets-2.png",
+    "status": "",
+    "count": 0
+  },
+  {
+    "id": 15,
+    "name": "Пицца Мясная",
+    "description": "Сливочный сыр, острые колбаски, моцарелла и фирменный соус.",
+    "price": 395,
+    "img": "./img/pizza-1.png",
+    "status": "",
+    "count": 0
+  },
+  {
+    "id": 16,
+    "name": "Пицца Пепперони",
+    "description": "Классическая пицца с пепперони, сыром и томатным соусом.",
+    "price": 475,
+    "img": "./img/pizza-2.png",
+    "status": "",
+    "count": 0
+  }
+]
