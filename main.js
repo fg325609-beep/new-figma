@@ -1,12 +1,4 @@
 // ==================== DATA ====================
-const categories = [
-    { name: "AKSIYA", img: "./img/logo.png" },
-    { name: "PIZZA",  img: "./img/logo.png" },
-    { name: "SUSHI",  img: "./img/logo.png" },
-    { name: "NAPITKI",img: "./img/logo.png" },
-];
-
-// Birinchi bo'lim ma'lumotlari
 let stwoData = [
     { id: 1, name: "Филадельфия кранч", price: 475, count: 0, status: "NEW", description: "Семга, рис, сыр креметто, соус унаги, авокадо...", img: "./img/section_two_img.png" },
     { id: 2, name: "Филадельфия крем-брюle", price: 395, count: 0, status: "XIT", description: "Сливочный сыр, семга татаки, соус унаги...", img: "./img/section_two_img_2.png" },
@@ -14,17 +6,18 @@ let stwoData = [
     { id: 4, name: "Тигр мама", price: 525, count: 0, status: "", description: "Тигровая креветка, огурец, авокадо, соус Айоли...", img: "./img/section_two_img_2.png" }
 ];
 
-// Ikkinchi bo'lim (Zakuski) ma'lumotlari
 let section_theareDATA = [
-    { id: 1, name: "Картофель фри", price: 475, count: 0, status: "NEW", description: "Золотистая, хрустящая картошечка фри.", img: "./img/firi.png" },
-    { id: 2, name: "Куриные крылышки", price: 395, count: 0, status: "XIT", description: "Аппетитные крылышки гриль bilan.", img: "./img/tovuq.png" },
-    { id: 3, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/KFC.png" },
-    { id: 4, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" },
-    { id: 5, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" },
-    { id: 6, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/KFC.png" },
-    { id: 7, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/pitssa.png" },
-    { id: 8, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/pitssa.png" },
+    { id: 101, name: "Картофель фри", price: 475, count: 0, status: "NEW", description: "Золотистая, хрустящая картошечка фри.", img: "./img/firi.png" },
+    { id: 102, name: "Куриные крылышки", price: 395, count: 0, status: "XIT", description: "Аппетитные крылышки гриль bilan.", img: "./img/tovuq.png" },
+    { id: 103, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/KFC.png" },
+    { id: 104, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" }
+];
 
+let dessertsData = [
+    { id: 201, name: "Мини-слойки", price: 475, count: 0, status: "NEW", description: "Хрустящие слойки с сахарной пудрой.", img: "./img/dessert-1.png" },
+    { id: 202, name: "Трубочки с кремом", price: 395, count: 0, status: "XIT", description: "Классические трубочки bilan.", img: "./img/dessert-2.png" },
+    { id: 203, name: "Сырники", price: 425, count: 0, status: "", description: "Традиционные сырники из творога.", img: "./img/dessert-3.png" },
+    { id: 204, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" }
 ];
 
 let total = 0;
@@ -57,11 +50,14 @@ function renderSection(containerId, data) {
     `).join('');
 }
 
-// ==================== LOGIC ====================
+// ==================== LOGIC (++ --) ====================
 window.changeCount = function(sectionId, id, delta) {
-    let targetData = (sectionId === 'section_two') ? stwoData : section_theareDATA;
+    let targetData;
+    if (sectionId === 'section_two') targetData = stwoData;
+    else if (sectionId === 'section_theare') targetData = section_theareDATA;
+    else if (sectionId === 'desserts') targetData = dessertsData;
+
     const item = targetData.find(p => p.id === id);
-    
     if (item) {
         item.count = Math.max(0, item.count + delta);
         renderSection(sectionId, targetData);
@@ -69,13 +65,17 @@ window.changeCount = function(sectionId, id, delta) {
 };
 
 window.addToCart = function(id, sectionId) {
-    let targetData = (sectionId === 'section_two') ? stwoData : section_theareDATA;
+    let targetData;
+    if (sectionId === 'section_two') targetData = stwoData;
+    else if (sectionId === 'section_theare') targetData = section_theareDATA;
+    else if (sectionId === 'desserts') targetData = dessertsData;
+
     const item = targetData.find(p => p.id === id);
 
     if (item && item.count > 0) {
         total += item.price * item.count;
         document.getElementById("total").textContent = `Jami: ${total} ₽`;
-        item.count = 0; // Savatga qo'shilgach nolga tushirish
+        item.count = 0; 
         renderSection(sectionId, targetData);
     } else {
         alert("Avval miqdorni tanlang!");
@@ -85,111 +85,4 @@ window.addToCart = function(id, sectionId) {
 // INITIALIZE
 renderSection("section_two", stwoData);
 renderSection("section_theare", section_theareDATA);
-
-
-let desserts = Document.getElementById("desserts");
-
-// ==================== DESSERTS DATA ====================
-let dessertsData = [
-    {
-        "id": 17,
-        "name": "Мини-слойки с начинкой",
-        "description": "Хрустящие слойки с сахарной пудрой и сладкой начинкой внутри.",
-        "price": 475,
-        "img": "./img/dessert-1.png",
-        "status": "NEW",
-        "count": 0
-    },
-    {
-        "id": 18,
-        "name": "Трубочки с кремом",
-        "description": "Классические трубочки с нежным сливочным кремом и джемом.",
-        "price": 395,
-        "img": "./img/dessert-2.png",
-        "status": "XIT",
-        "count": 0
-    },
-    {
-        "id": 19,
-        "name": "Сырники классические",
-        "description": "Традиционные сырники из свежего творога, обжаренные до золотистой корочки.",
-        "price": 425,
-        "img": "./img/dessert-3.png",
-        "status": "",
-        "count": 0
-    },
-    {
-        "id": 20,
-        "name": "Мороженое Магнат Шоколад",
-        "description": "Элитное мороженое в толстом слое настоящего молочного шоколада.",
-        "price": 525,
-        "img": "./img/dessert-4.png",
-        "status": "",
-        "count": 0
-    },
-    {
-        "id": 21,
-        "name": "Мороженое Магнат Трюфель",
-        "description": "Изысканный вкус трюфеля в сочетании с нежным пломбиром.",
-        "price": 525,
-        "img": "./img/dessert-5.png",
-        "status": "",
-        "count": 0
-    },
-    {
-        "id": 22,
-        "name": "Набор Мини Магнат",
-        "description": "Ассорти из маленьких порций любимого мороженого в одной упаковке.",
-        "price": 395,
-        "img": "./img/dessert-6.png",
-        "status": "",
-        "count": 0
-    },
-    {
-        "id": 23,
-        "name": "Магнат Белый шоколад",
-        "description": "Нежное фисташковое или ванильное мороженое в белом шоколаде.",
-        "price": 475,
-        "img": "./img/dessert-7.png",
-        "status": "",
-        "count": 0
-    },
-    {
-        "id": 24,
-        "name": "Сырники порция",
-        "description": "Дополнительная порция домашних сырников со сметаной или джемом.",
-        "price": 425,
-        "img": "./img/dessert-8.png",
-        "status": "",
-        "count": 0
-    }
-];
-
-
-
-function render(data){
-    dessertsData.innerHTML = data.map(el => `
-        <div class="card">
-            ${el.status ? `<span class="badge">${el.status}</span>` : ''}
-            <img src="${el.img}" alt="${el.name}" class="product-img">
-            <h1>${el.name}</h1>
-            <p>${el.description}</p>
-            
-            <div class="counter-container">
-                <div class="counter">
-                    <button class="btn-count" onclick="changeCount('${containerId}', ${el.id}, -1)">−</button>
-                    <span class="count-num">${el.count}</span>
-                    <button class="btn-count" onclick="changeCount('${containerId}', ${el.id}, 1)">+</button>
-                </div>
-                <div class="card-footer">
-                    <span class="price-text">${el.price * (el.count || 1)} ₽</span>
-                </div>
-            </div>
-            
-            <button class="btn-select" onclick="addToCart(${el.id}, '${containerId}')">Выбрать</button>
-        </div>
-        `).join('')
-
-}
-
-render(data)
+renderSection("desserts", dessertsData);
