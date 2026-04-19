@@ -85,3 +85,82 @@ window.addToCart = function(id, sectionId) {
 // INITIALIZE
 renderSection("section_two", stwoData);
 renderSection("section_theare", section_theareDATA);
+
+
+let desserts = Document.getElementById("desserts");
+
+// ==================== DESSERTS DATA ====================
+let dessertsData = [
+    {
+        "id": 17,
+        "name": "Мини-слойки с начинкой",
+        "description": "Хрустящие слойки с сахарной пудрой и сладкой начинкой внутри.",
+        "price": 475,
+        "img": "./img/dessert-1.png",
+        "status": "NEW",
+        "count": 0
+    },
+    {
+        "id": 18,
+        "name": "Трубочки с кремом",
+        "description": "Классические трубочки с нежным сливочным кремом и джемом.",
+        "price": 395,
+        "img": "./img/dessert-2.png",
+        "status": "XIT",
+        "count": 0
+    },
+    {
+        "id": 19,
+        "name": "Сырники классические",
+        "description": "Традиционные сырники из свежего творога, обжаренные до золотистой корочки.",
+        "price": 425,
+        "img": "./img/dessert-3.png",
+        "status": "",
+        "count": 0
+    },
+    {
+        "id": 20,
+        "name": "Мороженое Магнат Шоколад",
+        "description": "Элитное мороженое в толстом слое настоящего молочного шоколада.",
+        "price": 525,
+        "img": "./img/dessert-4.png",
+        "status": "",
+        "count": 0
+    },
+    {
+        "id": 21,
+        "name": "Мороженое Магнат Трюфель",
+        "description": "Изысканный вкус трюфеля в сочетании с нежным пломбиром.",
+        "price": 525,
+        "img": "./img/dessert-5.png",
+        "status": "",
+        "count": 0
+    },
+    {
+        "id": 22,
+        "name": "Набор Мини Магнат",
+        "description": "Ассорти из маленьких порций любимого мороженого в одной упаковке.",
+        "price": 395,
+        "img": "./img/dessert-6.png",
+        "status": "",
+        "count": 0
+    },
+    {
+        "id": 23,
+        "name": "Магнат Белый шоколад",
+        "description": "Нежное фисташковое или ванильное мороженое в белом шоколаде.",
+        "price": 475,
+        "img": "./img/dessert-7.png",
+        "status": "",
+        "count": 0
+    },
+    {
+        "id": 24,
+        "name": "Сырники порция",
+        "description": "Дополнительная порция домашних сырников со сметаной или джемом.",
+        "price": 425,
+        "img": "./img/dessert-8.png",
+        "status": "",
+        "count": 0
+    }
+];
