@@ -224,3 +224,109 @@ header h1 {
         font-size: 24px;
     }
 }
+
+
+
+
+/* Asosiy konteyner - kartochkalarni 4 qatordan joylashtiradi */
+#section_two {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 ta ustun */
+    gap: 20px; /* Kartochkalar orasidagi masofa */
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Har bir mahsulot kartochkasi */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Sichqoncha kelganda biroz ko'tariladi */
+}
+
+/* Mahsulot rasmi */
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Status (NEW/XIT) belgilari */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e74c3c; /* Qizil rang */
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Mahsulot nomi */
+.card h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Mahsulot tavsifi */
+.card p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+    flex-grow: 1; /* Tavsif balandligini to'ldiradi */
+    margin-bottom: 15px;
+}
+
+/* Pastki qism: Tugma va Narx */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-select {
+    background: #ff7a00; /* To'q sariq rang */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-select:hover {
+    background: #e66e00;
+}
+
+.price-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Mobil qurilmalar uchun moslashtirish */
+@media (max-width: 1024px) {
+    #section_two {
+        grid-template-columns: repeat(2, 1fr); /* Planshetda 2 ta ustun */
+    }
+}
+
+@media (max-width: 600px) {
+    #section_two {
+        grid-template-columns: 1fr; /* Telefonda 1 ta ustun */
+    }
+}

@@ -171,7 +171,7 @@ let stwoData = [
       "description": "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
       "price": 475,
       "currency": "₽",
-      "img": "./img/img/section_two_img_2.png",
+      "img": "./img/section_two_img_2.png",
       "status": ""
     },
     {
@@ -187,17 +187,52 @@ let stwoData = [
 
  function render_stwoData(data) {
     section_two.innerHTML = data.map(el => `
-        <div class="card" id="${el.id}">
+        <div class="card">
             ${el.status ? `<span class="badge">${el.status}</span>` : ''}
             <img src="${el.img}" alt="${el.name}">
             <h1>${el.name}</h1>
             <p>${el.description}</p>
-            <div class="card-footer">
-                <button class="btn-select">Выбрать</button>
-                <span>${el.price} ₽</span>
+            
+            <div class="counter-container">
+                <div class="counter">
+                    <button class="btn-count" onclick="minus(${el.id})">−</button>
+                    <span class="count-num">${el.count}</span>
+                    <button class="btn-count" onclick="plus(${el.id})">+</button>
+                </div>
+                <div class="card-footer">
+                    <span class="price-text">${el.price * (el.count || 1)} ₽</span>
+                </div>
             </div>
+            
+            <button class="btn-select" onclick="addToCart(${el.id})">Выбрать</button>
         </div>
-    `).join(''); 
+    `).join('');
+}
+
+// Qo'shish funksiyasi
+window.plus = function(id) {
+    const item = stwoData.find(p => p.id === id);
+    item.count++;
+    render_stwoData(stwoData);
+}
+
+// Kamaytirish funksiyasi
+window.minus = function(id) {
+    const item = stwoData.find(p => p.id === id);
+    if (item.count > 0) {
+        item.count--;
+        render_stwoData(stwoData);
+    }
+}
+
+// Tanlash tugmasi uchun (ixtiyoriy)
+window.addToCart = function(id) {
+    const item = stwoData.find(p => p.id === id);
+    if(item.count > 0) {
+        alert(`${item.name}dan ${item.count} ta savatga qo'shildi!`);
+    } else {
+        alert("Avval miqdorni tanlang!");
+    }
 }
 
 render_stwoData(stwoData);
