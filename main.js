@@ -164,3 +164,32 @@ let dessertsData = [
         "count": 0
     }
 ];
+
+
+
+function render(data){
+    dessertsData.innerHTML = data.map(el => `
+        <div class="card">
+            ${el.status ? `<span class="badge">${el.status}</span>` : ''}
+            <img src="${el.img}" alt="${el.name}" class="product-img">
+            <h1>${el.name}</h1>
+            <p>${el.description}</p>
+            
+            <div class="counter-container">
+                <div class="counter">
+                    <button class="btn-count" onclick="changeCount('${containerId}', ${el.id}, -1)">−</button>
+                    <span class="count-num">${el.count}</span>
+                    <button class="btn-count" onclick="changeCount('${containerId}', ${el.id}, 1)">+</button>
+                </div>
+                <div class="card-footer">
+                    <span class="price-text">${el.price * (el.count || 1)} ₽</span>
+                </div>
+            </div>
+            
+            <button class="btn-select" onclick="addToCart(${el.id}, '${containerId}')">Выбрать</button>
+        </div>
+        `).join('')
+
+}
+
+render(data)
