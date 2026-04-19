@@ -7,10 +7,10 @@ let stwoData = [
 ];
 
 let section_theareDATA = [
-    { id: 101, name: "Картофель фри", price: 475, count: 0, status: "NEW", description: "Золотистая, хрустящая картошечка фри.", img: "./img/firi.png" },
-    { id: 102, name: "Куриные крылышки", price: 395, count: 0, status: "XIT", description: "Аппетитные крылышки гриль bilan.", img: "./img/tovuq.png" },
-    { id: 103, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/KFC.png" },
-    { id: 104, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" }
+    { id: 1, name: "Картофель фри", price: 475, count: 0, status: "NEW", description: "Золотистая, хрустящая картошечка фри.", img: "./img/firi.png" },
+    { id: 2, name: "Куриные крылышки", price: 395, count: 0, status: "XIT", description: "Аппетитные крылышки гриль bilan.", img: "./img/tovuq.png" },
+    { id: 3, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/KFC.png" },
+    { id: 4, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" }
 ];
 
 let dessertsData = [
@@ -19,9 +19,8 @@ let dessertsData = [
     { id: 3, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/blochka.png" },
     { id: 4, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/marojni.png" },
     { id: 5, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/marojni.png" },
-    { id: 5, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/oq.png" },
-    { id: 6, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/2_oq" },
-    { id: 7, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" },
+    { id: 6, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/oq.png" },
+    { id: 7, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/2_oq.png" },
     { id: 8, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/blochka.png" },
 
 ];
