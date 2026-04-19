@@ -1,22 +1,39 @@
 // 1. Sushi bo'limi
 let sushiData = [
-    { id: 1, name: "Филадельфия", price: 475, count: 0, status: "NEW", description: "Свежий лосось, сливочный сыр и рис.", img: "https://upload.wikimedia.org/wikipedia/commons/6/60/Sushi_lot_1.jpg" },
-    { id: 2, name: "Калифорния", price: 395, count: 0, status: "XIT", description: "Краб, авокадо и икра тобико.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sushi_roll_California.jpg/640px-Sushi_roll_California.jpg" },
-    { id: 3, name: "Дракон Ролл", price: 425, count: 0, status: "", description: "Угорь, авокадо и соус унаги.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Dragon_Roll.jpg/640px-Dragon_Roll.jpg" },
-    { id: 4, name: "Сяке Маки", price: 525, count: 0, status: "", description: "Классический ролл с лососем.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Sake_maki.jpg/640px-Sake_maki.jpg" }
+    { id: 1, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 2, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 3, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 4, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 5, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 6, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 7, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 8, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+
+    
 ];
 
 // 2. Zakuski bo'limi
 let section_theareDATA = [
     { id: 1, name: "Картофель фри", price: 150, count: 0, status: "NEW", description: "Хрустящий картофель с солью.", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&q=80" },
     { id: 2, name: "Крылышки", price: 395, count: 0, status: "XIT", description: "Острые куриные крылышки гриль.", img: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500&q=80" },
-    { id: 3, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" }
+    { id: 3, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 4, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 5, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 6, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 7, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
+    { id: 8, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" },
 ];
 
 // 3. Desertlar bo'limi
 let dessertsData = [
     { id: 1, name: "Булочки", price: 100, count: 0, status: "NEW", description: "Свежая выпечка к чаю.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80" },
-    { id: 2, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" }
+    { id: 2, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" },
+    { id: 3, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" },
+    { id: 4, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" },
+    { id: 5, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" },
+    { id: 6, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" },
+    { id: 7, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" },
+    { id: 8, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80" },
 ];
 
 let total = 0;
