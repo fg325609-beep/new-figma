@@ -1,87 +1,76 @@
-// DATA
-let sushiData = [
-    { id: 1, name: "Филадельфия кранч", price: 475, count: 0, status: "NEW", description: "Семга, рис, сыр креметто, соус унаги, авокадо...", img: "https://upload.wikimedia.org/wikipedia/commons/6/60/Sushi_lot_1.jpg" },
-    { id: 2, name: "Филадельфия крем-брюле", price: 395, count: 0, status: "XIT", description: "Сливочный сыр, семга татаки, соус унаги...", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sushi_roll_California.jpg/640px-Sushi_roll_California.jpg" },
-    { id: 3, name: "Супер Филадельфия", price: 425, count: 0, status: "", description: "Действительно много семги, сливочный сыр...", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Dragon_Roll.jpg/640px-Dragon_Roll.jpg" },
-    { id: 4, name: "Тигр мама", price: 525, count: 0, status: "", description: "Тигровая креветка, огурец, авокадо, соус Айоли...", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Sake_maki.jpg/640px-Sake_maki.jpg" }
+// Bo'limlar ro'yxati
+const categories = [
+    { id: "pizza", title: "Пицца", img: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400" },
+    { id: "sushi", title: "Суши", img: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400" },
+    { id: "zakuski", title: "Закуски", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400" },
+    { id: "desserts", title: "Десерты", img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400" },
+    { id: "drinks", title: "Напитки", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400" },
+    { id: "sauces", title: "Соусы", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400" },
+    { id: "combo", title: "Комбо", img: "https://images.unsplash.com/photo-1610614819513-58e34989848b?w=400" }
 ];
 
-let section_theareDATA = [
-    { id: 1, name: "Картофель фри", price: 150, count: 0, status: "NEW", description: "Хрустящий картофель с солью.", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500" },
-    { id: 2, name: "Крылышки", price: 395, count: 0, status: "XIT", description: "Острые куриные крылышки гриль.", img: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500" },
-    { id: 3, name: "Наггетсы", price: 250, count: 0, status: "", description: "Куриное филе в панировке.", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=500" },
-    { id: 4, name: "Шаурма Классик", price: 320, count: 0, status: "", description: "Мясо гриль, соус, свежие овощи.", img: "https://images.unsplash.com/photo-1561651823-34feb02250e4?w=500" }
-];
+let allData = {};
+let totalSum = 0;
 
-let dessertsData = [
-    { id: 1, name: "Мини-слойки", price: 100, count: 0, status: "NEW", description: "Свежая выпечка с сахаром.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500" },
-    { id: 2, name: "Трубочки", price: 80, count: 0, status: "XIT", description: "Сладкие вафельные трубочки с кремом.", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500" },
-    { id: 3, name: "Сырники", price: 180, count: 0, status: "", description: "Домашние сырники со сметаной.", img: "https://images.unsplash.com/photo-1549395156-9acc8894ca69?w=500" },
-    { id: 4, name: "Мороженое", price: 120, count: 0, status: "", description: "Шоколадное мороженое Магнат.", img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500" }
-];
+// 56 ta kartani yaratish (har bo'limga 8 tadan)
+categories.forEach(cat => {
+    allData[cat.id] = [];
+    for (let i = 1; i <= 8; i++) {
+        allData[cat.id].push({
+            id: i,
+            name: `${cat.title} #${i}`,
+            price: 100 + (i * 50),
+            count: 0,
+            status: i === 1 ? "NEW" : (i === 2 ? "XIT" : ""),
+            description: "Магнат Мини — это коллекция легендарных вкусов эскимо...",
+            img: cat.img
+        });
+    }
+});
 
-let totalValue = 0;
+const mainContent = document.getElementById("main-content");
 
-// Universal Render
-function renderSection(containerId, data) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    container.innerHTML = data.map(el => `
-        <div class="card">
-            ${el.status ? `<span class="badge">${el.status}</span>` : ''}
-            <div class="img-box">
-                <img src="${el.img}" alt="${el.name}" class="product-img">
-            </div>
-            <h1>${el.name}</h1>
-            <p>${el.description}</p>
-            
-            <div class="card-footer-flex">
-                <div class="counter">
-                    <button class="btn-count" onclick="changeCount('${containerId}', ${el.id}, -1)">−</button>
-                    <span class="count-num">${el.count}</span>
-                    <button class="btn-count" onclick="changeCount('${containerId}', ${el.id}, 1)">+</button>
+function renderAll() {
+    mainContent.innerHTML = categories.map(cat => `
+        <h2 class="section-title">${cat.title}</h2>
+        <div class="grid-container" id="${cat.id}">
+            ${allData[cat.id].map(item => `
+                <div class="card">
+                    ${item.status ? `<span class="badge">${item.status}</span>` : ''}
+                    <div class="img-box"><img src="${item.img}" class="product-img"></div>
+                    <h1>${item.name}</h1>
+                    <p>${item.description}</p>
+                    <div class="card-footer-flex">
+                        <div class="counter">
+                            <button class="btn-count" onclick="changeCount('${cat.id}', ${item.id}, -1)">−</button>
+                            <span class="count-num">${item.count}</span>
+                            <button class="btn-count" onclick="changeCount('${cat.id}', ${item.id}, 1)">+</button>
+                        </div>
+                        <span class="price-text">${item.price} ₽</span>
+                    </div>
+                    <button class="btn-select" onclick="addToCart('${cat.id}', ${item.id})">Выбрать</button>
                 </div>
-                <span class="price-text">${el.price} ₽</span>
-            </div>
-            
-            <button class="btn-select" onclick="addToCart(${el.id}, '${containerId}')">Выбрать</button>
+            `).join('')}
         </div>
     `).join('');
 }
 
-// Logic: Change Count
-window.changeCount = function(sectionId, id, delta) {
-    let targetData = getTargetData(sectionId);
-    const item = targetData.find(p => p.id === id);
+window.changeCount = function(catId, itemId, delta) {
+    const item = allData[catId].find(p => p.id === itemId);
     if (item) {
         item.count = Math.max(0, item.count + delta);
-        renderSection(sectionId, targetData);
+        renderAll();
     }
 };
 
-// Logic: Add to Cart
-window.addToCart = function(id, sectionId) {
-    let targetData = getTargetData(sectionId);
-    const item = targetData.find(p => p.id === id);
-
+window.addToCart = function(catId, itemId) {
+    const item = allData[catId].find(p => p.id === itemId);
     if (item && item.count > 0) {
-        totalValue += item.price * item.count;
-        document.getElementById("total").textContent = `${totalValue} ₽`;
-        item.count = 0; // reset
-        renderSection(sectionId, targetData);
-    } else {
-        alert("Miqdorni tanlang!");
+        totalSum += item.price * item.count;
+        document.getElementById("total").textContent = `${totalSum} ₽`;
+        item.count = 0;
+        renderAll();
     }
 };
 
-function getTargetData(sectionId) {
-    if (sectionId === 'sushi') return sushiData;
-    if (sectionId === 'section_theare') return section_theareDATA;
-    if (sectionId === 'desserts') return dessertsData;
-}
-
-// INITIALIZE
-renderSection("sushi", sushiData);
-renderSection("section_theare", section_theareDATA);
-renderSection("desserts", dessertsData);
+renderAll();
