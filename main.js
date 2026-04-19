@@ -19,7 +19,10 @@ let section_theareDATA = [
     { id: 9, name: "Картофель фри", price: 475, count: 0, status: "NEW", description: "Золотистая, хрустящая картошечка фри.", img: "./img/firi.png" },
     { id: 10, name: "Куриные крылышки", price: 395, count: 0, status: "XIT", description: "Аппетитные крылышки гриль bilan.", img: "./img/tovuq.png" },
     { id: 11, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/KFC.png" },
-    { id: 12, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" }
+    { id: 12, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" },
+    { id: 12, name: "Классический ролл", price: 525, count: 0, status: "", description: "Сытный ролл в лаваше с курицей.", img: "./img/lavash.png" },
+    { id: 11, name: "Наггетсы куриные", price: 425, count: 0, status: "", description: "Нежное куриное филе в панировке.", img: "./img/KFC.png" },
+
 ];
 
 let total = 0;
