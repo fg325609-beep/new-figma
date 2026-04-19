@@ -107,3 +107,80 @@ searchInput.addEventListener("input", () => {
 // ==================== INITIALIZE ====================
 renderCategories();
 renderProducts(products);
+
+
+let section_two = document.getElementById("section_two");
+let stwoData = [
+    {
+      "id": 1,
+      "name": "Филадельфия кранч",
+      "description": "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
+      "price": 475,
+      "currency": "₽",
+      "img": "./img/philadelphia-crunch.png",
+      "status": "NEW"
+    },
+    {
+      "id": 2,
+      "name": "Филадельфия крем-брюле",
+      "description": "Сливочный сыр, семга татаки с тростниковым сахаром, соус у...",
+      "price": 395,
+      "currency": "₽",
+      "img": "./img/philadelphia-creme.png",
+      "status": "XIT"
+    },
+    {
+      "id": 3,
+      "name": "Супер Филадельфия",
+      "description": "Действительно много семги, сливочный сыр, огурец, рис, н...",
+      "price": 425,
+      "currency": "₽",
+      "img": "./img/super-philadelphia.png",
+      "status": ""
+    },
+    {
+      "id": 4,
+      "name": "Тигр мама",
+      "description": "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
+      "price": 525,
+      "currency": "₽",
+      "img": "./img/tiger-mama.png",
+      "status": ""
+    },
+    {
+      "id": 5,
+      "name": "Тигр мама",
+      "description": "Тигровая креветка, огурец, авокадо, соус Айоли, рис, ик...",
+      "price": 525,
+      "currency": "₽",
+      "img": "./img/tiger-mama-2.png",
+      "status": ""
+    },
+    {
+      "id": 6,
+      "name": "Супер Филадельфия",
+      "description": "Действительно много семги, сливочный сыр, огурец, рис, н...",
+      "price": 425,
+      "currency": "₽",
+      "img": "./img/super-philadelphia-2.png",
+      "status": ""
+    },
+    {
+      "id": 7,
+      "name": "Филадельфия кранч",
+      "description": "Семга, рис, сыр креметто, соус унаги, креветка, авокадо, чип...",
+      "price": 475,
+      "currency": "₽",
+      "img": "./img/philadelphia-crunch-2.png",
+      "status": ""
+    },
+    {
+      "id": 8,
+      "name": "Филадельфия крем-брюле",
+      "description": "Сливочный сыр, семга татаки с trostnikovыm saxarom, соус у...",
+      "price": 395,
+      "currency": "₽",
+      "img": "./img/philadelphia-creme-2.png",
+      "status": ""
+    }
+  ]
