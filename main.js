@@ -91,3 +91,15 @@ window.addToCart = function(id, sectionId) {
 renderSection("section_two", stwoData);
 renderSection("section_theare", section_theareDATA);
 renderSection("desserts", dessertsData);
+
+
+let sushiData = [
+  { "id": 1, "name": "Филадельфия кранч", "price": 475, "count": 0, "status": "NEW", "img": "https://example.com/sushi1.jpg" },
+  { "id": 2, "name": "Филадельфия крем-брюле", "price": 395, "count": 0, "status": "XIT", "img": "https://example.com/sushi2.jpg" },
+  { "id": 3, "name": "Супер Филадельфия", "price": 425, "count": 0, "status": "", "img": "https://example.com/sushi3.jpg" },
+  { "id": 4, "name": "Тигр мама", "price": 525, "count": 0, "status": "", "img": "https://example.com/sushi4.jpg" },
+  { "id": 5, "name": "Тигр мама", "price": 525, "count": 0, "status": "", "img": "https://example.com/sushi5.jpg" },
+  { "id": 6, "name": "Супер Филадельфия", "price": 425, "count": 0, "status": "", "img": "https://example.com/sushi6.jpg" },
+  { "id": 7, "name": "Филадельфия кранч", "price": 475, "count": 0, "status": "", "img": "https://example.com/sushi7.jpg" },
+  { "id": 8, "name": "Филадельфия крем-брюле", "price": 395, "count": 0, "status": "", "img": "https://example.com/sushi8.jpg" }
+];
