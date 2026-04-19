@@ -118,7 +118,8 @@ let stwoData = [
       "price": 475,
       "currency": "₽",
       "img": "./img/section_two_img.png",
-      "status": "NEW"
+      "status": "NEW",
+      "count": 0
     },
     {
       "id": 2,
@@ -127,7 +128,8 @@ let stwoData = [
       "price": 395,
       "currency": "₽",
       "img": "./img/section_two_img_2.png",
-      "status": "XIT"
+      "status": "XIT",
+      "count": 0
     },
     {
       "id": 3,
@@ -136,7 +138,8 @@ let stwoData = [
       "price": 425,
       "currency": "₽",
       "img": "./img/section_two_img.png",
-      "status": ""
+      "status": "",
+      "count": 0
     },
     {
       "id": 4,
@@ -145,7 +148,8 @@ let stwoData = [
       "price": 525,
       "currency": "₽",
       "img": "./img/section_two_img_2.png",
-      "status": ""
+      "status": "",
+      "count": 0
     },
     {
       "id": 5,
@@ -154,7 +158,8 @@ let stwoData = [
       "price": 525,
       "currency": "₽",
       "img": "./img/section_two_img_2.png",
-      "status": ""
+      "status": "",
+      "count": 0
     },
     {
       "id": 6,
@@ -163,7 +168,8 @@ let stwoData = [
       "price": 425,
       "currency": "₽",
       "img": "./img/section_two_img.png",
-      "status": ""
+      "status": "",
+      "count": 0
     },
     {
       "id": 7,
@@ -172,7 +178,8 @@ let stwoData = [
       "price": 475,
       "currency": "₽",
       "img": "./img/section_two_img_2.png",
-      "status": ""
+      "status": "",
+      "count": 0
     },
     {
       "id": 8,
@@ -181,7 +188,8 @@ let stwoData = [
       "price": 395,
       "currency": "₽",
       "img": "./img/section_two_img.png",
-      "status": ""
+      "status": "",
+      "count": 0
     }
   ]
 
