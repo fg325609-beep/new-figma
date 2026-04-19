@@ -14,10 +14,14 @@ let section_theareDATA = [
 ];
 
 let dessertsData = [
-    { id: 201, name: "Мини-слойки", price: 475, count: 0, status: "NEW", description: "Хрустящие слойки с сахарной пудрой.", img: "./img/dessert-1.png" },
-    { id: 202, name: "Трубочки с кремом", price: 395, count: 0, status: "XIT", description: "Классические трубочки bilan.", img: "./img/dessert-2.png" },
-    { id: 203, name: "Сырники", price: 425, count: 0, status: "", description: "Традиционные сырники из творога.", img: "./img/dessert-3.png" },
-    { id: 204, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" }
+    { id: 1, name: "Мини-слойки", price: 475, count: 0, status: "NEW", description: "Хрустящие слойки с сахарной пудрой.", img: "./img/bulochka.png" },
+    { id: 2, name: "Трубочки с кремом", price: 395, count: 0, status: "XIT", description: "Классические трубочки bilan.", img: "./img/dessert-2.png" },
+    { id: 3, name: "Сырники", price: 425, count: 0, status: "", description: "Традиционные сырники из творога.", img: "./img/dessert-3.png" },
+    { id: 4, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" },
+    { id: 5, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" },
+    { id: 6, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" },
+    { id: 7, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" },
+    { id: 8, name: "Мороженое Магнат", price: 525, count: 0, status: "", description: "Элитное мороженое в шоколаде.", img: "./img/dessert-4.png" },
 ];
 
 let total = 0;
