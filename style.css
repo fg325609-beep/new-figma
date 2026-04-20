@@ -117,3 +117,17 @@ section{
     color: darkorange;
     font-weight: bold;
 }
+
+footer{
+    width: 100%;
+    margin: 0 auto;
+
+}
+.ul{
+
+}
+.f_footer{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
