@@ -108,3 +108,12 @@ section{
     gap: 30px;
     flex-direction: column;
 }
+.p_two{
+    opacity: 0.5;
+}
+.sect_six a{
+    list-style: none;
+    text-decoration: none;
+    color: darkorange;
+    font-weight: bold;
+}
