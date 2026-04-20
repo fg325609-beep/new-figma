@@ -11,13 +11,15 @@ const categories = [
 let allData = {};
 let totalSum = 0;
 
-// 7 category × 8 = 56 ta card
+// 56 ta card
 categories.forEach(cat => {
     allData[cat.id] = Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         name: `${cat.title} mahsulot #${i + 1}`,
         price: 200 + i * 50,
         count: 0,
+        status: i === 0 ? "NEW" : (i === 1 ? "XIT" : ""),
+        description: "Mazali va yangi tayyorlangan mahsulot!",
         img: cat.img
     }));
 });
@@ -31,13 +33,27 @@ function renderAll() {
             <div class="grid-container">
                 ${allData[cat.id].map(item => `
                     <div class="card">
+                        ${item.status ? `<span class="badge">${item.status}</span>` : ""}
+
                         <div class="img-box">
                             <img src="${item.img}" class="product-img">
                         </div>
+
                         <h3>${item.name}</h3>
-                        <p class="price-text">${item.price} ₽</p>
-                        <button onclick="addToCart('${cat.id}', ${item.id})" class="btn-select">
-                            Qo‘shish
+                        <p>${item.description}</p>
+
+                        <div class="card-footer-flex">
+                            <div class="counter">
+                                <button class="btn-count" onclick="changeCount('${cat.id}', ${item.id}, -1)">−</button>
+                                <span>${item.count}</span>
+                                <button class="btn-count" onclick="changeCount('${cat.id}', ${item.id}, 1)">+</button>
+                            </div>
+
+                            <span class="price-text">${item.price} ₽</span>
+                        </div>
+
+                        <button class="btn-select" onclick="addToCart('${cat.id}', ${item.id})">
+                            Выбрать
                         </button>
                     </div>
                 `).join("")}
@@ -46,10 +62,27 @@ function renderAll() {
     `).join("");
 }
 
-function addToCart(catId, itemId) {
+// + − ishlashi
+window.changeCount = function(catId, itemId, delta) {
     const item = allData[catId].find(i => i.id === itemId);
-    totalSum += item.price;
-    document.getElementById("total").textContent = totalSum + " ₽";
-}
+    if (item) {
+        item.count = Math.max(0, item.count + delta);
+        renderAll();
+    }
+};
+
+// savatga qo‘shish
+window.addToCart = function(catId, itemId) {
+    const item = allData[catId].find(i => i.id === itemId);
+
+    if (item.count > 0) {
+        totalSum += item.price * item.count;
+        document.getElementById("total").textContent = totalSum + " ₽";
+        item.count = 0;
+        renderAll();
+    } else {
+        alert("Avval miqdorni tanlang!");
+    }
+};
 
 renderAll();
