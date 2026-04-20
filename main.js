@@ -87,3 +87,4 @@ window.addToCart = function(catId, itemId) {
 
 renderAll();
 
+
