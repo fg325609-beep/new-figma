@@ -152,13 +152,25 @@ a{
     color: #333;
     list-style: none;
     text-decoration: none;
+    &:hover{
+        color: black;
+        font-weight: bold;
+    }
 }
 .ul_two{
 
-    width: 20%;
+    width: 25%;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
-.ul_two a{
-    
+.ul_two i{
+width: 100%;
+display: flex;
+align-items: center;
+
+}
+.ul_two span{
+    display: flex;
+    align-items: center;
 }
